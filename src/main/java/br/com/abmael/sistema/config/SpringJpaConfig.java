@@ -8,18 +8,18 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
-
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
 public class SpringJpaConfig {
+
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/sistema?createDatabaseIfNotExist=true");
+        ds.setUrl("jdbc:mysql://localhost:3306/sistemaweb?createDatabaseIfNotExist=true");
         ds.setUsername("root");
         ds.setPassword("");
         return ds;
