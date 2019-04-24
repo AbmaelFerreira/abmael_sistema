@@ -1,4 +1,4 @@
-package br.abmael.sistema.config;
+package br.com.abmael.sistema.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -8,6 +8,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan("br.abmael.sistema")
+@ComponentScan("br.com.abmael.sistema")
 public class SpringRootConfig {
 }

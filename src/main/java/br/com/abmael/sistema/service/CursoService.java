@@ -1,6 +1,6 @@
-package br.abmael.sistema.service;
+package br.com.abmael.sistema.service;
 
-import br.abmael.sistema.domain.Curso;
+import br.com.abmael.sistema.domain.Curso;
 
 import java.util.Date;
 import java.util.List;

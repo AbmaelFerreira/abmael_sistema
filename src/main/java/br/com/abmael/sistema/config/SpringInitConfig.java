@@ -1,4 +1,4 @@
-package br.abmael.sistema.config;
+package br.com.abmael.sistema.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -10,11 +10,13 @@ public class SpringInitConfig  extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
+
         return new Class[0];
     }
 
     @Override
     protected String[] getServletMappings() {
+
         return new String[] {"/"};
     }
 }

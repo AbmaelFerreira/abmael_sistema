@@ -1,7 +1,7 @@
-package br.abmael.sistema.service;
+package br.com.abmael.sistema.service;
 
-import br.abmael.sistema.dao.CursoDao;
-import br.abmael.sistema.domain.Curso;
+import br.com.abmael.sistema.dao.CursoDao;
+import br.com.abmael.sistema.domain.Curso;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

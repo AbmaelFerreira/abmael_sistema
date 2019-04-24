@@ -1,34 +1,33 @@
-package br.abmael.sistema.domain;
+package br.com.abmael.sistema.domain;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 
 @Entity
-@Table(name = "curso",
-            indexes ={ @Index(
-                                columnList = "titulo, data_inicio",
-                                unique = true,
-                                name = "unique_titulo_dataInicio"
-                             )
-                     }
-     )
-
-
-public class Curso  implements Serializable {
+@Table(name = "cursos",
+        indexes = { @Index(
+                columnList = "titulo, data_inicio",
+                unique = true,
+                name = "unique_titulo_dataInicio")
+        }
+)
+public class Curso implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private  String titulo;
+    private String titulo;
 
     @Column(name = "carga_horaria", nullable = false)
     @Enumerated(EnumType.STRING)
     private CargaHoraria cargaHoraria;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "data_inicio")
     private Date dataInicio;
 
@@ -48,14 +47,6 @@ public class Curso  implements Serializable {
         this.titulo = titulo;
     }
 
-    public Date getDataInicio() {
-        return dataInicio;
-    }
-
-    public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
-    }
-
     public CargaHoraria getCargaHoraria() {
         return cargaHoraria;
     }
@@ -64,18 +55,27 @@ public class Curso  implements Serializable {
         this.cargaHoraria = cargaHoraria;
     }
 
+    public Date getDataInicio() {
+        return dataInicio;
+    }
+
+    public void setDataInicio(Date dataInicio) {
+        this.dataInicio = dataInicio;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Curso)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+
         Curso curso = (Curso) o;
-        return id.equals(curso.id);
+
+        return id != null ? id.equals(curso.id) : curso.id == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return id != null ? id.hashCode() : 0;
     }
 
     @Override

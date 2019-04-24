@@ -1,6 +1,6 @@
-package br.abmael.sistema.dao;
+package br.com.abmael.sistema.dao;
 
-import br.abmael.sistema.domain.Curso;
+import br.com.abmael.sistema.domain.Curso;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -11,7 +11,7 @@ import java.util.List;
 public class CursoDaoImpl implements CursoDao {
 
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
     public void save(Curso curso) {

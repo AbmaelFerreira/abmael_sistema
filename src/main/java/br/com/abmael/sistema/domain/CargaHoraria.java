@@ -1,4 +1,4 @@
-package br.abmael.sistema.domain;
+package br.com.abmael.sistema.domain;
 
 public enum CargaHoraria {
 

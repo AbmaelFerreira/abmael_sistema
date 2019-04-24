@@ -1,4 +1,4 @@
-package br.abmael.sistema.config;
+package br.com.abmael.sistema.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
